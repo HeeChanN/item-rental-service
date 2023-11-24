@@ -3,6 +3,7 @@ package com.sejong.rental.controller;
 
 import com.sejong.rental.dto.RentalReqDto;
 import com.sejong.rental.service.ItemService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ public class ItemController {
 
     /** 대여품 전체 조회 */
     @GetMapping("/items")
+    @Operation(summary = "대여품 전체 조회", description = "관리자, 일반 유저 모두 이걸로 조회")
     public ResponseEntity<?> getAllItem(@RequestParam("page") int page,
                                         @RequestParam("size") int size){
         return ResponseEntity.status(HttpStatus.OK)
@@ -27,6 +29,7 @@ public class ItemController {
     }
 
     /** 단일 대여품 조회 */
+    @Operation(summary = "단일 대여품 조회", description = "관리자, 일반 유저 모두 이걸로 조회")
     @GetMapping("/item/{itemId}")
     public ResponseEntity<?> getItem(@PathVariable("itemId") Long id) {
         try {

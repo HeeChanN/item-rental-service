@@ -2,6 +2,8 @@ package com.sejong.rental.controller;
 
 import com.sejong.rental.entity.Image;
 import com.sejong.rental.service.ImageService;
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +24,7 @@ public class ImageController {
     private final ImageService imageService;
 
     /** 해당 bucket의 aiinfo에 사진을 저장 */
+    @Operation(summary = "이미지 업로드", description = "이미지 업로드")
     @PostMapping(value = "/bill/image",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE

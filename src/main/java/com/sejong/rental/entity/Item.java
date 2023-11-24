@@ -44,6 +44,9 @@ public class Item {
     public void setCnt(Integer cnt) {
         this.cnt = this.cnt - cnt;
     }
+    public void returnCnt(Integer cnt){
+        this.cnt = this.cnt +cnt;
+    }
 
 
 }
