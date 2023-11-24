@@ -20,7 +20,7 @@ public class ItemController {
     private final ItemService itemService;
 
     /** 대여품 전체 조회 */
-    @PostMapping("/items")
+    @GetMapping("/items")
     @Operation(summary = "대여품 전체 조회", description = "관리자, 일반 유저 모두 이걸로 조회")
     public ResponseEntity<?> getAllItem(@RequestParam("page") int page,
                                         @RequestParam("size") int size){

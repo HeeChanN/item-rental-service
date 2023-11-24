@@ -37,7 +37,7 @@ public class RentalController {
 
     /** 대여 내역 조회 */
     @Operation(summary = "일반 유저 대여 내역 조회", description = "학번, 비밀번호로 조회")
-    @GetMapping("/rentals")
+    @PostMapping("/rentals")
     public ResponseEntity<?> getRentalByInfo(@RequestBody SearchRentalReqDto searchRentalReqDto){
         return ResponseEntity.status(HttpStatus.OK).body(rentalService.getRentals(searchRentalReqDto));
     }
