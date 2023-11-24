@@ -12,5 +12,6 @@ import lombok.NoArgsConstructor;
 public class RegisterItemReqDto {
     private String itemName;
     private Integer cnt;
+    private Integer total;
     private String image;
 }

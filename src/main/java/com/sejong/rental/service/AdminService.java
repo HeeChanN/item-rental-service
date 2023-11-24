@@ -61,6 +61,7 @@ public class AdminService {
         Rental rental = rentalRepository.findById(id).orElseThrow(()->new Exception("해당 대여기록이 존재하지 않습니다."));
         rental.setStatus(RentalStatus.RENTAL);
 
+        rentalRepository.save(rental);
         return "대여 완료";
     }
 

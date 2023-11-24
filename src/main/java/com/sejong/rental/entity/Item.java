@@ -39,7 +39,8 @@ public class Item {
 
     public void setAll(RegisterItemReqDto registerItemReqDto){
         this.name = registerItemReqDto.getItemName();
-        this.total = registerItemReqDto.getCnt();
+        this.cnt = registerItemReqDto.getCnt();
+        this.total = registerItemReqDto.getTotal();
         this.url = registerItemReqDto.getImage();
     }
 
