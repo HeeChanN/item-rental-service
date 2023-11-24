@@ -29,6 +29,7 @@ public class AdminService {
                 .name(registerItemReqDto.getItemName())
                 .cnt(registerItemReqDto.getCnt())
                 .url(registerItemReqDto.getImage())
+                .total(registerItemReqDto.getCnt())
                 .build();
 
         itemRepository.save(item);

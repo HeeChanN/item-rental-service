@@ -20,7 +20,7 @@ public class RentalResDto {
         this.rentalId = rental.getId();
         this.itemName = rental.getItem().getName();
         this.url = rental.getItem().getUrl();
-        this.cnt = rental.getItem().getCnt();
+        this.cnt = rental.getCnt();
         this.status = rental.getStatus();
     }
 }

@@ -20,16 +20,18 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private Integer total;
     private Integer cnt;
     private String url;
 
 
 
     @Builder
-    public Item(String name, Integer cnt, String url) {
+    public Item(String name, Integer cnt, String url,Integer total) {
         this.name = name;
         this.cnt = cnt;
         this.url = url;
+        this.total = total;
     }
 
     @OneToMany(mappedBy ="item",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
@@ -37,7 +39,7 @@ public class Item {
 
     public void setAll(RegisterItemReqDto registerItemReqDto){
         this.name = registerItemReqDto.getItemName();
-        this.cnt = registerItemReqDto.getCnt();
+        this.total = registerItemReqDto.getCnt();
         this.url = registerItemReqDto.getImage();
     }
 

@@ -14,6 +14,7 @@ public class ItemResDto {
     private Long id;
     private String itemName;
     private Integer cnt;
+    private Integer total;
     private String image;
 
     public ItemResDto(Item item) {
@@ -21,6 +22,7 @@ public class ItemResDto {
         this.itemName=item.getName();
         this.cnt =item.getCnt();
         this.image = item.getUrl();
+        this.total =item.getTotal();
     }
 
 }
