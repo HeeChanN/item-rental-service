@@ -47,6 +47,8 @@ public class RentalService {
         Rental rental = rentalRepository.findById(id).orElseThrow(()-> new Exception("해당 대여기록이 존재하지 않습니다."));
 
         rental.updateRental(rentalReqDto);
+        rental.getItem().returnCnt(rental.getCnt());
+        rental.getItem().setCnt(rentalReqDto.getCnt());
         //rentalRepository.save(rental);
         RentalResDto rentalResDto = new RentalResDto(rental);
         return rentalResDto;
