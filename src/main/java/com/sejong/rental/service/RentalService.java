@@ -49,7 +49,7 @@ public class RentalService {
         rental.updateRental(rentalReqDto);
         rental.getItem().returnCnt(rental.getCnt());
         rental.getItem().setCnt(rentalReqDto.getCnt());
-        //rentalRepository.save(rental);
+        rentalRepository.save(rental);
         RentalResDto rentalResDto = new RentalResDto(rental);
         return rentalResDto;
     }
