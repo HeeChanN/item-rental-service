@@ -11,11 +11,13 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class ItemResDto {
+    private Long id;
     private String itemName;
     private Integer cnt;
     private String image;
 
     public ItemResDto(Item item) {
+        this.id =item.getId();
         this.itemName=item.getName();
         this.cnt =item.getCnt();
         this.image = item.getUrl();

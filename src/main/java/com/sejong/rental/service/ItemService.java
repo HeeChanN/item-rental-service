@@ -14,6 +14,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class ItemService {
@@ -32,7 +34,7 @@ public class ItemService {
 
         return ItemsPageResDto
                 .builder()
-                .items(items.getContent())
+                .items(items.getContent().stream().map(o->new ItemResDto(o)).collect(Collectors.toList()))
                 .pageInfo(pageInfo)
                 .build();
     }

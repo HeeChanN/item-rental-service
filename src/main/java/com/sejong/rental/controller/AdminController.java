@@ -87,4 +87,17 @@ public class AdminController {
                     .body(e.getMessage());
         }
     }
+
+    @Operation(summary = "이전 대여 기록 삭제", description = "이미 지난 기록 삭제삭제")
+    @DeleteMapping("/rental/past/{rentalId}")
+    public ResponseEntity<?> deleteRental(@PathVariable("rentalId") Long id){
+        try{
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(adminService.deleteRental(id));
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+        }
+    }
 }

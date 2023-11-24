@@ -14,6 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class ItemsPageResDto {
-    List<Item> items;
+    List<ItemResDto> items;
     PageInfo pageInfo;
 }

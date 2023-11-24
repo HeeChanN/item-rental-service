@@ -72,4 +72,11 @@ public class AdminService {
 
         return "반납 완료";
     }
+
+    public String deleteRental(Long id) throws Exception{
+        Rental rental = rentalRepository.findById(id).orElseThrow(()->new Exception("해당 대여기록이 존재하지 않습니다."));
+        rentalRepository.delete(rental);
+
+        return "삭제완료";
+    }
 }
