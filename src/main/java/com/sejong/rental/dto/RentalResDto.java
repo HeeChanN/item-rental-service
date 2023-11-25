@@ -15,6 +15,7 @@ public class RentalResDto {
     private String url;
     private Integer cnt;
     private RentalStatus status;
+    private Integer limitCnt;
 
     public RentalResDto(Rental rental) {
         this.rentalId = rental.getId();
@@ -22,5 +23,6 @@ public class RentalResDto {
         this.url = rental.getItem().getUrl();
         this.cnt = rental.getCnt();
         this.status = rental.getStatus();
+        this.limitCnt = rental.getItem().getCnt();
     }
 }
